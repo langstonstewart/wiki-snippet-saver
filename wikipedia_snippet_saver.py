@@ -1,10 +1,6 @@
 import os, shutil
 from playwright.sync_api import sync_playwright
 
-# UPDATES: account for multiple page results, download main image
-
-
-
 class Wiki_Snippet_Saver:
 
     def __init__(self, main_link) -> None:
@@ -16,7 +12,6 @@ class Wiki_Snippet_Saver:
         self.wiki_page = self.broswer.new_page(user_agent=self.user_agent)
         os.makedirs('Saved-Text', exist_ok=True)
         
-
 
     def title(self):
         title = f"- Wiki Snippet Saver v.{self.ver} -"
@@ -57,8 +52,6 @@ class Wiki_Snippet_Saver:
                 return
             else:
                 print(f"Invalid command. Please try again.")
-
-        
 
 
     def search(self, term: str, redirect=False):
